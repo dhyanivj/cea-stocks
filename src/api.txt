@@ -1,0 +1,29 @@
+https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2020-06-01/2020-06-17?apiKey=fC22PpG6fvgEAtTJjXkliRKwl4PexTm1
+
+
+import React, { useEffect, useState } from "react";
+import { Select } from 'react-select'
+
+const Dropdown = () => {
+  const APP_KEY = "fC22PpG6fvgEAtTJjXkliRKwl4PexTm1";
+  const KEYWORD = "FB";
+
+
+const getSymbol =  fetch(`https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${KEYWORD}&apikey=${APP_KEY}`)
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+
+  const searchList = getSymbol.map(
+    ({ bestMatches,     "1. symbol"] }) => {
+      return{ 
+       value: "1. symbol", 
+       label:"1. symbol"
+      }
+     }
+    );
+
+  return <div>Hello</div>;
+};
+
+export default Dropdown;
